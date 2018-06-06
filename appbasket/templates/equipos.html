@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block extracss %}
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'css/gallery-1.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block body %}
+    {% include "modulos/titulo.html" %}
+	{% include "modulos/descripcion.html" %}
+    {% include "modulos/galeria_fotos.html" %}
+{% endblock %}

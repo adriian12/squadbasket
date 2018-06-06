@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% include "modulos/titulo.html" %}
+	{% include "modulos/descripcion_foto.html" %}
+    <section id="content">
+	    <div class="container">
+            <div class="about">
+                {% include "modulos/quienes_somos.html" %}
+                {% include "modulos/directiva.html" %}
+            </div>
+        </div>
+	</section>
+{% endblock %}
+

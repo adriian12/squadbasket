@@ -1,0 +1,32 @@
+{% load staticfiles %}
+<header>
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="/"><img src="{% static 'img/logo.png' %}" alt="logo"/></a>
+            </div>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="{% url 'home' %}">Inicio</a></li>
+                     <li class="dropdown">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle">Información<b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="{% url 'about' %}">Club</a></li>
+                        <li><a href="{% url 'noticias' %}">Noticias</a></li>
+                        <li><a href="trofeos.html">Trofeos</a></li>
+                    </ul>
+                </li>
+                    <li><a href="{% url 'equipos' %}">Categorías</a></li>
+                    <li><a href="{% url 'resultados' %}">Resultados</a></li>
+                    <li><a href="{% url 'precios' %}">Precios</a></li>
+                    <li><a href="{% url 'contacto' %}">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</header>

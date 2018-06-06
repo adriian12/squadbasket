@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    {% include "modulos/titulo.html" %}
+    <section id="content">
+        <div class="container">
+            {% include "modulos/descripcion.html" %}
+            {% include "modulos/formulario_mapa.html" %}
+        </div>
+    </section>
+{% endblock %}
