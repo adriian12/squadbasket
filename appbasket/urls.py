@@ -1,7 +1,11 @@
 from django.conf.urls import include, url
 from . import views
+from django.contrib import admin
+
+admin.autodiscover()
 
 urlpatterns = [
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', views.home, name='home'),
     url(r'^about/$', views.about, name='about'),
     url(r'^contacto/$', views.contacto, name='contacto'),
@@ -12,3 +16,4 @@ urlpatterns = [
     url(r'^slider/$', views.slider_content, name='slider'),
     url(r'^columnas/$', views.columna_list, name='columnas'),
 ]
+

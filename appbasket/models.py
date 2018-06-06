@@ -27,15 +27,14 @@ class Noticias(models.Model):
 class Slider(models.Model):
     titulo = models.CharField(max_length=50)
     texto = models.TextField(max_length=200)
-    imagen = models.ImageField(upload_to='uploads/slider')
+    imagen = models.ImageField(upload_to='media/uploads/slider')
 
     def __str__(self):
         return self.titulo
 
 class Columnas(models.Model):
-    titulo = models.CharField(max_length=50)
-    texto = models.TextField(max_length=200)
+    col_titulo = models.CharField(max_length=50)
+    col_texto = models.TextField(max_length=200)
 
     def __str__(self):
-        return self.titulo
-
+        return self.col_titulo

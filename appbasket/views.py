@@ -33,8 +33,9 @@ def slider_content(request):
     return render(request, 'slider.html', {'slide': slide})
 
 def columna_list(request):
-    columna = Columnas.objects.all()
-    return render(request, 'seccion_columnas.html', {'columna': columna})
+    columnas = Columnas.objects.all()
+    return render(request, 'index.html', {'columnas': columnas})
+    print columna_list
 
 
 
