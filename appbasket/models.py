@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-
+from django.utils.encoding import smart_unicode
 
 # class Home(models.Model):
 #     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -8,6 +8,8 @@ from django.utils import timezone
 #     texto = models.TextField(max_length=80)
 #     creada = models.DateTimeField(default=timezone.now)
 #     imagen = models.ImageField(upload_to='uploads/logo')
+
+
 
 
 class Noticia(models.Model):
@@ -21,23 +23,23 @@ class Noticia(models.Model):
         self.publicada = timezone.now()
         self.save()
 
-    def __str__(self):
-        return self.titulo
+    def __unicode__(self):
+        return (u"%s" % self.titulo)
 
 class Slider(models.Model):
     titulo = models.CharField(max_length=50)
     texto = models.TextField(max_length=200)
     imagen = models.ImageField(upload_to='slides')
 
-    def __str__(self):
-        return self.titulo
+    def __unicode__(self):
+        return (u"%s" % self.titulo)
 
 class Columna(models.Model):
     col_titulo = models.CharField(max_length=50)
     col_texto = models.TextField(max_length=200)
 
-    def __str__(self):
-        return self.col_titulo
+    def __unicode__(self):
+        return (u"%s" % self.col_titulo)
 
 class Reciente(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
@@ -45,13 +47,14 @@ class Reciente(models.Model):
     texto = models.TextField(max_length=300)
     imagen = models.ImageField(upload_to='noticias')
 
-    def __str__(self):
-        return self.titulo
+    def __unicode__(self):
+        return (u"%s" % self.titulo)
 
 class Directiva(models.Model):
     nombre = models.CharField(max_length=30)
     puesto = models.CharField(max_length=30)
     imagen = models.ImageField(upload_to='directiva')
+    tabla = models.TextField(null=True, blank=True, default='')
 
-    def __str__(self):
-        return self.nombre
+    def __unicode__(self):
+        return (u"%s" % self.nombre)

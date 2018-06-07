@@ -4,7 +4,7 @@
             <ul class="slides">
             {% for foto in slide %}
               <li>
-                <img src="{{ foto.imagen.url }}" alt="" />
+                <img class="slider-img" src="static/uploads{{ foto.imagen.url }}" alt="" />
                 <div class="flex-caption">
                     <h3>{{ foto.titulo }}</h3>
 					<p>{{ foto.texto }}</p>

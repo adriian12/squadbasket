@@ -402,6 +402,9 @@ display:none;
 	position: relative; 
 	zoom: 1;
 }
+.flexslider .slider-img{
+	height: 400px;
+}
 .flex-direction-nav .flex-prev{
 left:0px; 
 }
@@ -1036,10 +1039,16 @@ footer .widget .social-network {
   text-align: center;
   margin-bottom: 5px;
 }
+
 .team-member .deg{
-text-align:center;
-display:block;
+	text-align:center;
+	display:block;
 }
+
+.team-member img{
+	width: 100%;
+}
+
 #bottom .widget .widgetheading span, aside .widget .widgetheading span, footer .widget .widgetheading span {	
 	position: absolute;
 	width: 60px;
@@ -1326,6 +1335,7 @@ footer h5 a:hover, footer a:hover {
 ul.social-network {
 	list-style:none;
 	margin:0;
+	padding: 0;
 }
 
 ul.social-network li {
@@ -1340,35 +1350,12 @@ ul.social-network li {
 	vertical-align: baseline;
 }
 
-#sub-footer{
-	text-shadow:none;
-	color:#f5f5f5;
-	padding:0;
-	padding-top:30px;
-	margin:20px 0 0 0;
-	background: #1b1b1b;
-}
-
-#sub-footer p{
-	margin:0;
-	padding:0;
-	color: #c5c5c5;
-}
-
-#sub-footer span{
-	color: #828282;
-}
-
 .copyright {
 	text-align:left;
 	font-size:12px;
 	color: #b3b3b3;
+	float: right;
 }
-
-#sub-footer ul.social-network {
-	float:right;
-}
-
   
 
 /* scroll to top */
@@ -1523,6 +1510,14 @@ article img.pull-right, article .align-right{
     width: 80%;
     margin: 0 auto;
 }
+
+.team-six .directiva-img{
+	width: 100%;
+	cursor: pointer;
+}
+
+
+
 /*  Media queries 
 ============================= */
 
@@ -1677,7 +1672,7 @@ padding-top: 3px;
 		margin-bottom:20px;
 	}
 
-	#sub-footer ul.social-network {
+	footer ul.social-network {
 		float:left;
 	}
 

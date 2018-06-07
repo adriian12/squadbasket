@@ -12,7 +12,7 @@
 			<div class="row service-v1 margin-bottom-40">
                 {% for noticias in recientes %}
                 <div class="col-md-4 md-margin-bottom-40">
-                   <img class="img-responsive noticias-recientes" src="{{ noticias.imagen.url }}" alt="noticia reciente">
+                   <img class="img-responsive noticias-recientes" src="static/uploads{{ noticias.imagen.url }}" alt="noticia reciente">
                     <h3>{{ noticias.titulo }}</h3>
                     <p>{{ noticias.texto }}</p>
                 </div>

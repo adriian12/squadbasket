@@ -86,7 +86,9 @@ DATABASES = {
 # Internationalization
 # https://docs.djangoproject.com/en/1.8/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-es'
+
+DEFAULT_CHARSET='utf-8'
 
 TIME_ZONE = 'Europe/Berlin'
 
@@ -103,5 +105,5 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/static/img/'
+MEDIA_ROOT = os.path.join('appbasket/static/uploads/')
+MEDIA_URL = '/'
