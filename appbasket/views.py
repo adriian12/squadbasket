@@ -1,11 +1,17 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Noticias, Slider, Columnas
+from .models import Noticia, Slider, Columna, Reciente, Directiva
 
 # ------------------- Internas -----------------------
 
 def home(request):
-    return render(request, 'index.html', {})
+    slide = Slider.objects.all()
+    columnas = Columna.objects.all()
+    recientes = Reciente.objects.all()
+    miembros = Directiva.objects.all()
+    return render(request, 'index.html', {
+        'columnas': columnas, 'slide': slide, 'recientes': recientes, 'miembros': miembros
+    })
 
 def about(request):
     return render(request, 'about.html', {})
@@ -25,17 +31,8 @@ def resultados(request):
 # ----------------- Modulos --------------------------
 
 def noticia_list(request):
-    posts = Noticias.objects.all()
+    posts = Noticia.objects.all()
     return render(request, 'noticias.html', {'posts': posts})
-
-def slider_content(request):
-    slide = Slider.objects.all()
-    return render(request, 'slider.html', {'slide': slide})
-
-def columna_list(request):
-    columnas = Columnas.objects.all()
-    return render(request, 'index.html', {'columnas': columnas})
-    print columna_list
 
 
 

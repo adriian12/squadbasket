@@ -2,21 +2,22 @@
     <section id="banner">
         <div id="main-slider" class="flexslider">
             <ul class="slides">
+            {% for foto in slide %}
               <li>
-                <img src="{{ slide.imagen.url }}" alt="" />
+                <img src="{{ foto.imagen.url }}" alt="" />
                 <div class="flex-caption">
-                    <h3>{{ slide.titulo }}</h3>
-					<p>{{ slide.texto }}</p>
-
+                    <h3>{{ foto.titulo }}</h3>
+					<p>{{ foto.texto }}</p>
                 </div>
               </li>
-              <li>
-                <img src="../../static/img/slides/2.jpg" alt="" />
-                <div class="flex-caption">
-                    <h3>1ª autonómica</h3>
-					<p>Logra el ascenso a la siguiente categoria</p>
-                </div>
-              </li>
+              {% endfor %}
+{#              <li>#}
+{#                <img src="../../static/img/slides/2.jpg" alt="" />#}
+{#                <div class="flex-caption">#}
+{#                    <h3>1ª autonómica</h3>#}
+{#					<p>Logra el ascenso a la siguiente categoria</p>#}
+{#                </div>#}
+{#              </li>#}
             </ul>
         </div>
     </section>

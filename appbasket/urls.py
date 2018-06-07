@@ -13,7 +13,5 @@ urlpatterns = [
     url(r'^precios/$', views.precios, name='precios'),
     url(r'^resultados/$', views.resultados, name='resultados'),
     url(r'^noticias/$', views.noticia_list, name='noticias'),
-    url(r'^slider/$', views.slider_content, name='slider'),
-    url(r'^columnas/$', views.columna_list, name='columnas'),
 ]
 

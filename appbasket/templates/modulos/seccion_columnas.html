@@ -3,15 +3,17 @@
     <div class="row">
         <div class="skill-home">
             <div class="skill-home-solid clearfix">
+                {% for info in columnas %}
                 <div class="col-md-3 col-sm-6 text-center">
                     <span class="icons c1">
                         <i class="fa fa-home"></i>
                     </span>
                     <div class="box-area">
-                        <h3>{{ columnas|pprint }}</h3>
-                        <p></p>
+                        <h3>{{ info.col_titulo }}</h3>
+                        <p>{{ info.col_texto }}</p>
                     </div>
                 </div>
+                {% endfor %}
 {% comment %}                <div class="col-md-3 col-sm-6 text-center">
                     <span class="icons c2">
                         <i class="fa fa-rocket"></i>
