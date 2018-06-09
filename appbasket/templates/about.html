@@ -1,13 +1,20 @@
 {% extends 'base.html' %}
-
+{% block title %}Club{% endblock %}
 {% block body %}
-    {% include "modulos/titulo.html" %}
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Club</h2>
+                </div>
+            </div>
+        </div>
+    </section>
 	{% include "modulos/descripcion_foto.html" %}
     <section id="content">
 	    <div class="container">
             <div class="about">
                 {% include "modulos/quienes_somos.html" %}
-                {% include "modulos/directiva.html" %}
             </div>
         </div>
 	</section>

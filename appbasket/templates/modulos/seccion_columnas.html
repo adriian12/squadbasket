@@ -6,11 +6,11 @@
                 {% for info in columnas %}
                 <div class="col-md-3 col-sm-6 text-center">
                     <span class="icons c1">
-                        <i class="fa fa-home"></i>
+                        {{ info.icono|safe }}
                     </span>
                     <div class="box-area">
-                        <h3>{{ info.col_titulo }}</h3>
-                        <p>{{ info.col_texto }}</p>
+                        <h3>{{ info.titulo }}</h3>
+                        <p>{{ info.texto|safe }}</p>
                     </div>
                 </div>
                 {% endfor %}

@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Noticia, Slider, Columna, Reciente, Directiva
+from .models import Noticia, Slider, Columna, Reciente, Directiva, GaleriaEquipo, ClubInfo, ClubOrg, Plantilla
 
 # ------------------- Internas -----------------------
 
@@ -14,13 +14,20 @@ def home(request):
     })
 
 def about(request):
-    return render(request, 'about.html', {})
+    club = ClubInfo.objects.all()
+    org = ClubOrg.objects.all()
+    return render(request, 'about.html', {'club': club, 'org': org})
 
 def contacto(request):
     return render(request, 'contacto.html', {})
 
 def equipos(request):
-    return render(request, 'equipos.html', {})
+    equipo = GaleriaEquipo.objects.all()
+    return render(request, 'equipos.html', {'equipo': equipo})
+
+def plantillas(request):
+    plantilla = Plantilla.objects.all()
+    return render(request, 'junior_masc.html', {'plantilla': plantilla})
 
 def precios(request):
     return render(request, 'precios.html', {})
