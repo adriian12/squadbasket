@@ -1,3 +1,4 @@
+{% load staticfiles %}
 <section id="gallery-1" class="content-block section-wrapper gallery-1">
     <div class="container">
         <div class="editContent">
@@ -24,7 +25,7 @@
                             <div class="image-overlay"></div>
                             <a href="../static/uploads{{ categoria.imagen.url }}" class="gallery-zoom"><i
                                     class="fa fa-eye"></i></a>
-                            <a href="#" class="gallery-link"><i class="fa fa-link"></i></a>
+                            <a href="{% url 'plantillas' %}" class="gallery-link"><i class="fa fa-link"></i></a>
                         </div>
                         <div class="gallery-details">
                             <div class="editContent">

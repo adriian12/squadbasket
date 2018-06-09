@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Noticia, Slider, Columna, Reciente, Directiva, GaleriaEquipo, ClubInfo, ClubOrg, Plantilla, Datos
+from django.db import models
+from django.forms import TextInput, Textarea
+from .models import Noticia, Slider, Columna, Reciente, Directiva, GaleriaEquipo, ClubInfo, ClubOrg, Plantilla, Jugadores
 
 admin.site.register(Noticia)
 admin.site.register(Slider)
@@ -8,7 +10,6 @@ admin.site.register(Reciente)
 admin.site.register(Directiva)
 admin.site.register(GaleriaEquipo)
 admin.site.register(ClubOrg)
-admin.site.register(Datos)
 
 
 
@@ -23,17 +24,24 @@ class ClubInfoAdmin(admin.ModelAdmin):
 admin.site.register(ClubInfo, ClubInfoAdmin)
 
 
-class DatosInline(admin.StackedInline):
-    model = Datos
-    extra = 3
-
+class JugadoresLista(admin.TabularInline):
+    model = Jugadores
+    extra = 1
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size': '20'})},
+        models.TextField: {'widget': Textarea(attrs={'rows': 2, 'cols': 20})},
+    }
 
 class PlantillaAdmin(admin.ModelAdmin):
 
     fieldsets = [
-        (None,               {'fields': ['equipo']}),
-        ('Jugador/a', {'fields': ['id', 'nombre', 'apellido', 'posicion', 'numero', 'imagen'],
-                              'classes': ['collapse']}),
+        (None, {'fields': ['id', 'equipo']}),
+
     ]
+    inlines = [JugadoresLista]
+    formfield_overrides = {
+        models.CharField: {'widget': TextInput(attrs={'size': '10'})},
+        models.TextField: {'widget': Textarea(attrs={'rows': 2, 'cols': 20})},
+    }
 
 admin.site.register(Plantilla, PlantillaAdmin)

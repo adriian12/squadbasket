@@ -675,10 +675,9 @@ ul.breadcrumb li a:hover {
 	text-decoration:none;
 }
 
-/* Formulario
+/* Contacto
 ============================= */
 
-/* --- contacto ---- */
 form#contactform input[type="text"] {
   width: 100%;
   border: 1px solid #f5f5f5;
@@ -923,7 +922,7 @@ section.section-padding.gray-bg {
     background: #32c8de;
 }
 
-/* --- Projectos --- */
+/* --- Proyectos --- */
 .top-wrapper {
 	margin-bottom:20px;
 }
@@ -984,26 +983,6 @@ blockquote cite a,
 blockquote cite a:visited,
 blockquote cite a:visited {
     color:#555;
-}
-
-/* --- pullquotes --- */
-
-.pullquote-left {
-	display:block;
-	color:#a2a2a2;
-	font-family:'Noto Serif', serif;
-	font-size:14px;
-	line-height:1.6em;
-	padding-left:20px;
-}
-
-.pullquote-right {
-	display:block;
-	color:#a2a2a2;
-	font-family:'Noto Serif', serif;
-	font-size:14px;
-	line-height:1.6em;
-	padding-right:20px;
 }
 
 /* --- button --- */
@@ -1439,6 +1418,61 @@ ul.social-network li {
 
 .about-text .descripcion{
     margin-top: -10px;
+}
+
+/*  Plantillas
+============================= */
+
+.plantilla{
+    text-align: center;
+    min-height: 600px;
+}
+
+.plantilla-img{
+    width: 60%;
+}
+
+.plantilla .jugadores{
+    width: 80%;
+    position: relative;
+    height: auto;
+    margin: 0 auto;
+    padding-left: 5%;
+}
+
+.plantilla .jugadores ul{
+
+}
+
+.plantilla .jugadores ul li{
+    display: inline;
+    width: 12%;
+    float: left;
+    padding: 10px 0;
+    margin: 0 15px;
+    font-size: 10px;
+    color: #000;
+}
+
+.plantilla .jugadores ul li .datos{
+    background-color: #3BFB88;
+}
+
+.plantilla .jugadores ul li .posicion{
+    background-color: #ED5441;
+}
+.plantilla .jugadores ul li .dorsal{
+    background-size: 41px;
+    padding-top: 25px;
+    font-size: 15px;
+    color: #FFF;
+    background: url("../img/tshirt.svg") no-repeat center;
+    background-size: 40px;
+}
+
+.plantilla .jugadores ul li .dorsal .numero{
+    position: relative;
+    top: -10px;
 }
 
 /*  Flecha hacia top

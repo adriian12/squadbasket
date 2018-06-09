@@ -92,11 +92,15 @@ class ClubOrg(models.Model):
 class Plantilla(models.Model):
     id = models.CharField(primary_key=True, max_length=25)
     equipo = models.ForeignKey(GaleriaEquipo)
-    nombre = models.CharField(max_length=25)
-    apellido = models.CharField(max_length=25)
-    posicion = models.CharField(max_length=15)
-    numero = models.CharField(max_length=2)
-    imagen = models.ImageField(upload_to='plantilla')
 
     def __unicode__(self):
         return (u"%s" % self.equipo)
+
+class Jugadores(models.Model):
+    equipo = models.ForeignKey(Plantilla)
+    dorsal = models.CharField(blank=True, max_length=2)
+    nombre = models.CharField(max_length=25 )
+    apellido = models.CharField(blank=True, max_length=20)
+    posicion = models.CharField(blank=True, max_length=15)
+    id = models.CharField(primary_key=True, max_length=4)
+    imagen = models.ImageField(upload_to='plantilla/', default='plantilla/default.jpeg', blank=True,)

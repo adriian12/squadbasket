@@ -56,7 +56,9 @@ ROOT_URLCONF = 'squadbasket.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'appbasket/templates/index.html',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -104,6 +106,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+TEMPLATES_URL = '/templates/'
+TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates')
 
 MEDIA_ROOT = os.path.join('appbasket/static/uploads/')
 MEDIA_URL = '/'
