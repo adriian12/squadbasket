@@ -1,11 +1,22 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
+{% block title %}Contacto{% endblock %}
 {% block body %}
-    {% include "modulos/titulo.html" %}
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Contacta con nosotros</h2>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="content">
         <div class="container">
-            {% include "modulos/descripcion.html" %}
-            {% include "modulos/formulario_mapa.html" %}
+            <div class="row">
+                {% include "modulos/formulario.html" %}
+                {% include "modulos/mapa.html" %}
+            </div>
         </div>
     </section>
 {% endblock %}

@@ -1,0 +1,54 @@
+
+<div class="item-page">
+    <div align="center">
+        {% for plantilla in plantilla %}
+    <h1>
+        <b>{{ plantilla.equipo }}</b>
+    </h1>
+    <h3>
+        <b>{{ plantilla.nombre }}</b>
+    </h3>
+    <img class="plantilla-img img-responsive" src="../static/uploads/categorias/{{ plantilla.id }}.jpg" />
+        {% endfor %}
+    </div>
+    <br>
+</div>
+
+<div class="plantilla">
+    <div class="jugadores">
+        <ul>
+            {% for jugador in jugadores %}
+                <li class="jugador">
+                    <a title="{{ jugador.nombre }} {{ jugador.apellido }}" href="#">
+                        <img src="../static/uploads{{ jugador.imagen.url }}" alt="Jugador/a" width="112" height="102">
+                    </a><br>
+                    <div class="datos">
+                        <strong>{{ jugador.nombre }}</strong><br>
+                        <strong>{{ jugador.apellido }}</strong><br>
+                    </div>
+                    <div class="posicion">
+                        <strong>{{ jugador.posicion }}</strong><br>
+                    </div>
+                    <div class="dorsal">
+                        <strong class="numero">{{ jugador.dorsal }}</strong>
+                    </div>
+                </li>
+            {% endfor %}<br>
+            {% for entrenador in entrenadores %}
+                <li class="entrenador">
+                    <a title="Entrenador/a del {{ entrenador.equipo }}" href="#">
+                        <img src="../static/uploads{{ entrenador.imagen.url }}" alt="Entrenador/a" width="112" height="102">
+                    </a><br>
+                    <div class="datos">
+                        <strong>{{ entrenador.nombre }}</strong><br>
+                        <strong>{{ entrenador.apellido }}</strong><br>
+                    </div>
+                    <div class="posicion">
+                        <strong>{{ entrenador.posicion }}</strong><br>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+    <br>
+</div>

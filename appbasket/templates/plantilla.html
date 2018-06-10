@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Plantillas y resultados{% endblock %}
+{% block body %}
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Plantillas y resultados</h2>
+                </div>
+            </div>
+        </div>
+    </section>
+    {% include "plantillas/junior_masc.html" %}
+    {% include "modulos/clasificacion.html" %}
+{% endblock %}

@@ -9,9 +9,6 @@ from django.utils.encoding import smart_unicode
 #     creada = models.DateTimeField(default=timezone.now)
 #     imagen = models.ImageField(upload_to='uploads/logo')
 
-
-
-
 class Noticia(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=50)
@@ -56,12 +53,12 @@ class Directiva(models.Model):
     puesto = models.CharField(max_length=30)
     imagen = models.ImageField(upload_to='directiva')
     id = models.CharField(primary_key=True, max_length=25)
-    tabla = models.TextField(null=True, blank=True, default='')
+    tabla = models.TextField(null=True, blank=True)
 
     def __unicode__(self):
         return (u"%s" % self.nombre)
 
-class GaleriaEquipo(models.Model):
+class Equipo(models.Model):
     categoria = models.CharField(max_length=30)
     imagen = models.ImageField(upload_to='categorias')
     equipo = models.CharField(max_length=30)
@@ -91,7 +88,8 @@ class ClubOrg(models.Model):
 
 class Plantilla(models.Model):
     id = models.CharField(primary_key=True, max_length=25)
-    equipo = models.ForeignKey(GaleriaEquipo)
+    equipo = models.ForeignKey(Equipo)
+    nombre = models.CharField(blank=True, max_length=30)
 
     def __unicode__(self):
         return (u"%s" % self.equipo)
@@ -104,3 +102,24 @@ class Jugadores(models.Model):
     posicion = models.CharField(blank=True, max_length=15)
     id = models.CharField(primary_key=True, max_length=4)
     imagen = models.ImageField(upload_to='plantilla/', default='plantilla/default.jpeg', blank=True,)
+
+class Entrenadores(models.Model):
+    equipo = models.ForeignKey(Plantilla)
+    nombre = models.CharField(max_length=25)
+    apellido = models.CharField(blank=True, max_length=20)
+    posicion = models.CharField(blank=True, max_length=15)
+    id = models.CharField(primary_key=True, max_length=4)
+    imagen = models.ImageField(upload_to='plantilla/', default='plantilla/default.jpeg', blank=True, )
+
+class Precio(models.Model):
+    categoria = models.CharField(max_length=25)
+    total = models.CharField(max_length=20)
+    complemento_uno = models.CharField(u'Complemento', blank=True, max_length=35)
+    complemento_dos = models.CharField(u'Complemento', blank=True, max_length=35)
+    complemento_tres = models.CharField(u'Complemento',blank=True,  max_length=35)
+    complemento_cuatro = models.CharField(u'Complemento', blank=True, max_length=35)
+    complemento_cinco = models.CharField(u'Complemento', blank=True, max_length=35)
+    url = models.TextField(blank=True, max_length=150)
+
+    def __unicode__(self):
+        return (u"%s" % self.categoria)

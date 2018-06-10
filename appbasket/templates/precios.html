@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
-
+{% load staticfiles %}
+{% block title %}Precios{% endblock %}
 {% block body %}
-    {% include "modulos/titulo.html" %}
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Precios Temporada 2018/19</h2>
+                </div>
+            </div>
+        </div>
     {% include "modulos/lista_precios.html" %}
 {% endblock %}
-
