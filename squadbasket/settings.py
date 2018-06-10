@@ -25,7 +25,7 @@ SECRET_KEY = 'b)(m_6c6pspr#b!#xooqv09gz*q&w@fk%x+pnjv$mj-wd62xcx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition
@@ -107,8 +107,6 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-TEMPLATES_URL = '/templates/'
-TEMPLATES_ROOT = os.path.join(BASE_DIR, 'templates')
 
 MEDIA_ROOT = os.path.join('appbasket/static/uploads/')
 MEDIA_URL = '/'

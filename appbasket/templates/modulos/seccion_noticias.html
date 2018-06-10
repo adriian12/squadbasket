@@ -1,0 +1,46 @@
+{% load staticfiles %}
+<section id="gallery-1" class="content-block section-wrapper gallery-1">
+    <div class="container">
+        <div class="editContent">
+            <ul class="filter">
+                <li class="active"><a href="#" data-filter="*">Todas</a></li>
+                <li><a href="#" data-filter=".directiva">Directiva</a></li>
+                <li><a href="#" data-filter=".base">Base</a></li>
+                <li><a href="#" data-filter=".leb">Leb Oro</a></li>
+
+            </ul>
+        </div>
+
+        <div class="row noticias">
+            <div id="isotope-gallery-container">
+                {% for noticia in posts %}
+                <div class="col-md-4 col-sm-6 col-xs-12 gallery-item-wrapper {{ noticia.etiqueta }}">
+                    <div class="gallery-item item-noticias">
+                        <div class="gallery-thumb">
+                            <a href="{% url 'noticias' %}" class="">
+                                <img src="../static/uploads{{ noticia.imagen.url }}" class="img-responsive img-noticias"
+                                 alt="{{ noticia.titulo }}">
+                            </a>
+                        </div>
+                        <div class="gallery-details">
+                            <div class="editContent">
+                                <h5>{{ noticia.titulo }}</h5><br>
+                            </div>
+                            <div class="editContent">
+                                <p>{{ noticia.texto }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</section>
+
+{##}
+{#        <div>#}
+{#            <h1><a href="">{{ post.titulo }}</a></h1>#}
+{#            <p>{{ post.descripcion|linebreaksbr }}</p>#}
+{#            <p>Publicado: {{ post.publicada }}</p>#}
+{#        </div>#}

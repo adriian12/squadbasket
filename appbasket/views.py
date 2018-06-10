@@ -1,21 +1,21 @@
 from django.shortcuts import render
 from django.utils import timezone
-from .models import Noticia, Slider, Columna, Reciente, Directiva, Equipo, ClubInfo, ClubOrg, Plantilla, Jugadores, Entrenadores, Precio
+from .models import  Noticia, Slider, Columna, Directiva, Equipo, Club, Organizacion, Plantilla, Jugadores, Entrenadores, Precio
 
 # ------------------- Internas -----------------------
 
 def home(request):
     slide = Slider.objects.all()
     columnas = Columna.objects.all()
-    recientes = Reciente.objects.all()
+    recientes = Noticia.objects.all()
     miembros = Directiva.objects.all()
     return render(request, 'index.html', {
         'columnas': columnas, 'slide': slide, 'recientes': recientes, 'miembros': miembros
     })
 
 def about(request):
-    club = ClubInfo.objects.all()
-    org = ClubOrg.objects.all()
+    club = Club.objects.all()
+    org = Organizacion.objects.all()
     return render(request, 'about.html', {'club': club, 'org': org})
 
 def contacto(request):
@@ -35,12 +35,10 @@ def precios(request):
     precio = Precio.objects.all()
     return render(request, 'precios.html', {'precio': precio})
 
-def resultados(request):
-    return render(request, 'resultados.html', {})
+# def resultados(request):
+#     return render(request, 'resultados.html', {})
 
-# ----------------- Modulos --------------------------
-
-def noticia_list(request):
+def noticias(request):
     posts = Noticia.objects.all()
     return render(request, 'noticias.html', {'posts': posts})
 

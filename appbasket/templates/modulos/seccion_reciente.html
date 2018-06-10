@@ -1,21 +1,33 @@
-<section class="section-padding gray-bg">
-		<div class="container">
-			<div class="row">
-				<div class="col-md-12">
-					<div class="section-title text-center">
-						<h2>Noticias Recientes</h2>
-						<p>La última actualidad de nuestro club desde los más grandes a los más pequeños.</p>
-					</div>
-				</div>
-			</div>
-			<div class="row service-v1 margin-bottom-40">
-                {% for noticias in recientes %}
-                <div class="col-md-4 md-margin-bottom-40">
-                   <img class="img-responsive noticias-recientes" src="static/uploads{{ noticias.imagen.url }}" alt="noticia reciente">
-                    <h3>{{ noticias.titulo }}</h3>
+<section class="noticias-recientes section-padding gray-bg">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-title text-center">
+                    <h2>Noticias Recientes</h2>
+                    <p>La última actualidad de nuestro club desde los más grandes a los más pequeños.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="customNavigation">
+            <a class="btn gray prev"><i class="icon ion-ios-arrow-left"></i></a>
+            <a class="btn gray next"><i class="icon ion-ios-arrow-right"></i></a>
+        </div>
+
+        <div id="slider-carousel" class="owl-carousel">
+            {% for noticias in recientes %}
+                <div class="item">
+                    <a class="hoverfx" href="#">
+                        <img src="static/uploads{{ noticias.imagen.url }}">
+                    </a>
+                    <h4>{{ noticias.titulo }}</h4>
                     <p>{{ noticias.texto }}</p>
                 </div>
-                {% endfor %}
-            </div>
-		</div>
-    </section>
+            {% endfor%}
+        </div>
+
+    </div>
+</section>

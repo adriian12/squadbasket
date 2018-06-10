@@ -1,17 +1,13 @@
 from django.contrib import admin
 from django.db import models
 from django.forms import TextInput, Textarea
-from .models import Noticia, Slider, Columna, Reciente, Directiva, Equipo, ClubInfo, ClubOrg, Plantilla, Jugadores, Entrenadores, Precio
+from .models import Noticia, Slider, Columna, Directiva, Equipo, Club, Organizacion, Plantilla, Jugadores, Entrenadores, Precio
 
 admin.site.register(Noticia)
 admin.site.register(Slider)
 admin.site.register(Columna)
-admin.site.register(Reciente)
 admin.site.register(Directiva)
 admin.site.register(Equipo)
-admin.site.register(ClubOrg)
-
-
 
 class ClubInfoAdmin(admin.ModelAdmin):
     list_display = ('titulo', 'imagen', 'descripcion', 'que_hacemos')
@@ -21,7 +17,18 @@ class ClubInfoAdmin(admin.ModelAdmin):
         (u'Que hacemos', {'fields': ('que_hacemos',)})
     ]
 
-admin.site.register(ClubInfo, ClubInfoAdmin)
+admin.site.register(Club, ClubInfoAdmin)
+
+
+class OrganizacionAdmin(admin.ModelAdmin):
+    model = Organizacion
+    extra = 1
+    prepopulated_fields = {}
+    fieldsets = [
+        (u'Organizacion', {'fields': ('titulo', 'id', 'descripcion')})
+    ]
+
+admin.site.register(Organizacion, OrganizacionAdmin)
 
 
 class JugadoresLista(admin.TabularInline):

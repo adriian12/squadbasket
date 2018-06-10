@@ -1,9 +1,18 @@
 {% extends 'base.html' %}
-    {% block body %}
-        {% include "modulos/slider.html" %}
-        <section id="content">
-            {% include "modulos/seccion_columnas.html" %}
-            {% include "modulos/seccion_reciente.html" %}
-            {% include "modulos/directiva.html" %}
-        </section>
-    {% endblock %}
+{% load staticfiles %}
+{% block extracss %}
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    {% include "modulos/slider.html" %}
+    <section id="content">
+        {% include "modulos/seccion_columnas.html" %}
+        {% include "modulos/seccion_reciente.html" %}
+        {% include "modulos/directiva.html" %}
+    </section>
+{% endblock %}
+{% block extrajs %}
+    <script src="{% static 'js/carousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'js/carousel/jquery.carousel.js' %}"></script>
+{% endblock %}

@@ -7,12 +7,16 @@ from django.utils.encoding import smart_unicode
 #     titulo = models.CharField(max_length=200)
 #     texto = models.TextField(max_length=80)
 #     creada = models.DateTimeField(default=timezone.now)
-#     imagen = models.ImageField(upload_to='uploads/logo')
+#     imagen = models.ImageField(upload_to='logo')
 
 class Noticia(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
     titulo = models.CharField(max_length=50)
     texto = models.TextField(max_length=400)
+    completo = models.TextField(blank=True, max_length=1500)
+    imagen = models.ImageField(blank=True, upload_to='noticias')
+    etiqueta = models.CharField(max_length=30, default='todas')
+    codigo = models.CharField(primary_key=True, max_length=5)
     creada = models.DateTimeField(default=timezone.now)
     publicada = models.DateTimeField(blank=True, null=True)
 
@@ -39,15 +43,6 @@ class Columna(models.Model):
     def __unicode__(self):
         return (u"%s" % self.titulo)
 
-class Reciente(models.Model):
-    autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=40)
-    texto = models.TextField(max_length=300)
-    imagen = models.ImageField(upload_to='noticias')
-
-    def __unicode__(self):
-        return (u"%s" % self.titulo)
-
 class Directiva(models.Model):
     nombre = models.CharField(max_length=30)
     puesto = models.CharField(max_length=30)
@@ -69,7 +64,7 @@ class Equipo(models.Model):
         return (u"%s" % self.equipo)
 
 
-class ClubInfo(models.Model):
+class Club(models.Model):
     titulo = models.CharField(max_length=50)
     imagen = models.ImageField(upload_to='club')
     descripcion = models.TextField( max_length=550)
@@ -78,10 +73,10 @@ class ClubInfo(models.Model):
     def __unicode__(self):
         return (u"%s" % self.titulo)
 
-class ClubOrg(models.Model):
+class Organizacion(models.Model):
     titulo = models.CharField(max_length=50)
     id = models.CharField(primary_key=True, max_length=25)
-    descripcion = models.TextField(blank=True, max_length=300, default='org')
+    descripcion = models.TextField(blank=True, max_length=300)
 
     def __unicode__(self):
         return (u"%s" % self.titulo)

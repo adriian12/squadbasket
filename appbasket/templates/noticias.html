@@ -1,15 +1,21 @@
-<html>
-    <head>
-        <title>Noticias</title>
-    </head>
-    <body>
-    {% for post in posts %}
-        <div>
-            <h1><a href="">{{ post.titulo }}</a></h1>
-            <p>{{ post.descripcion|linebreaksbr }}</p>
-            <p>Publicado: {{ post.publicada }}</p>
+{% extends 'base.html' %}
+{% load staticfiles %}
+{% block title %}Noticias{% endblock %}
+{% block extracss %}
+    <link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet">
+    <link href="{% static 'css/gallery-1.css' %}" rel="stylesheet">
+    <link href="{% static 'css/carousel.css' %}" rel="stylesheet">
+{% endblock %}
+{% block body %}
+    <section id="inner-headline">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h2 class="pageTitle">Noticias</h2>
+                </div>
+            </div>
         </div>
-    {% endfor %}
+    </section>
+    {% include "modulos/seccion_noticias.html" %}
+{% endblock %}
 
-    </body>
-</html>
