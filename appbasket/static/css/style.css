@@ -281,9 +281,11 @@ header .nav li .dropdown-menu li a {
 /* --- menu --- */
 
 .flex-caption p {
+    margin: 12px 0 18px;
     line-height: 22px;
-    font-weight: 300;
-    color: #d2d2d2;
+    font-size: 22px;
+    font-weight: bold;
+    color: #FFF;
 }
 header .navigation {
 	float:right;
@@ -438,12 +440,6 @@ display: inline-block;
     text-transform: uppercase;
     font-size: 70px;
     font-weight: 700;
-}
-
-.flex-caption p {
-    margin: 12px 0 18px;
-    font-size: 19px;
-    font-weight: 400;
 }
 
 .skill-home{
@@ -1502,6 +1498,7 @@ ul.social-network li {
     min-height: 360px;
 }
 
+
 /*
 ================================================== */
 
@@ -1848,6 +1845,11 @@ article img.pull-right, article .align-right{
     .skill-home-solid > div{
         padding-bottom: 25px;
     }
+
+    .about-text h3 {
+        font-size: 22px;
+        padding: 20px 0 20px;
+    }
 }
 
 
@@ -2026,6 +2028,12 @@ article img.pull-right, article .align-right{
     [class*="span"] {
             margin-bottom:20px;
     }
+    .copyright{
+        float: left;
+        position: relative;
+        left: -180px;
+        top: 55px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -2052,4 +2060,18 @@ article img.pull-right, article .align-right{
 		height:20px;
 		font-size:14px;
 	}
+
+    .noticias .filter li{
+        display: block;
+    }
+    noticias .filter li:before{
+        display: none;
+    }
+
+    .copyright{
+        float: left;
+        position: relative;
+        left: -180px;
+        top: 55px;
+    }
 }

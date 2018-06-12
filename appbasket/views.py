@@ -7,16 +7,16 @@ from .models import  Noticia, Slider, Columna, Directiva, Equipo, Club, Organiza
 def home(request):
     slide = Slider.objects.all()
     columnas = Columna.objects.all()
-    recientes = Noticia.objects.all()
+    recientes = Noticia.objects.all()[:5]
     miembros = Directiva.objects.all()
     return render(request, 'index.html', {
         'columnas': columnas, 'slide': slide, 'recientes': recientes, 'miembros': miembros
     })
 
-def about(request):
+def club(request):
     club = Club.objects.all()
     org = Organizacion.objects.all()
-    return render(request, 'about.html', {'club': club, 'org': org})
+    return render(request, 'club.html', {'club': club, 'org': org})
 
 def contacto(request):
     return render(request, 'contacto.html', {})
@@ -41,6 +41,10 @@ def precios(request):
 def noticias(request):
     posts = Noticia.objects.all()
     return render(request, 'noticias.html', {'posts': posts})
+
+def noticia_completa(request):
+    completa = Noticia.objects.all()[:1]
+    return render(request, 'noticias/noticia.html', {'completa': completa})
 
 
 

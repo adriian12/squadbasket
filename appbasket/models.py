@@ -2,12 +2,6 @@ from django.db import models
 from django.utils import timezone
 from django.utils.encoding import smart_unicode
 
-# class Home(models.Model):
-#     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)
-#     titulo = models.CharField(max_length=200)
-#     texto = models.TextField(max_length=80)
-#     creada = models.DateTimeField(default=timezone.now)
-#     imagen = models.ImageField(upload_to='logo')
 
 class Noticia(models.Model):
     autor = models.ForeignKey('auth.User', on_delete=models.CASCADE)

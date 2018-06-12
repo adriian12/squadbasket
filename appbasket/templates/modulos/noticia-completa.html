@@ -1,0 +1,18 @@
+<section class="section-padding">
+    <div class="container">
+        {% for completa in completa %}
+        <div class="row showcase-section">
+            <div class="col-md-6">
+                <img src="../static/uploads{{ completa.imagen.url }}" alt="showcase image" width="100%">
+            </div>
+            <div class="col-md-6">
+                <div class="about-text">
+                    <h3>{{ completa.titulo }}</h3>
+                    <p class="descripcion">{{ completa.texto|safe }}</p><br>
+                    <p class="descripcion">{{ completa.completo|safe|linebreaksbr }}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
