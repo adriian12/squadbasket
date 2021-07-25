@@ -1841,7 +1841,7 @@ article img.pull-right, article .align-right{
 /*  Media queries 
 ============================= */
 
-@media (max-width: 991px){
+
     .skill-home-solid > div{
         padding-bottom: 25px;
     }

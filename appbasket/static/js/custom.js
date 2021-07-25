@@ -118,7 +118,14 @@ jQuery(document).ready(function($) {
         sync                : "",                //{NEW} Selector: Mirror the actions performed on this slider with another slider. Use with care.
         asNavFor            : "",                //{NEW} Selector: Internal property exposed for turning the slider into a thumbnail navigation for another slider
     });
-	/* -------- Isotope Filtering -------- */
+
+
+
+
+
+
+
+	/* -------- Filtros -------- */
 		var $container = $('#isotope-gallery-container');
 		var $filter = $('.filter');
 		$(window).load(function () {
@@ -140,7 +147,7 @@ jQuery(document).ready(function($) {
 		$(window).smartresize(function () {
 		$container.isotope('reLayout');
 		});
-		// End Isotope Filtering
+		// Zoom imagenes galeria
 		$('.gallery-zoom').magnificPopup({ 
 				type: 'image'
 				// other options
