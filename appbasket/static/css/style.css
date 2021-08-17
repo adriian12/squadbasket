@@ -1903,9 +1903,13 @@ article img.pull-right, article .align-right{
 /*  Media queries 
 ============================= */
 
+
 @media (min-width: 992px){
     .container {
         width: 100%;
+    }
+    .skill-home-solid > div{
+        padding-bottom: 25px;
     }
 }
 
