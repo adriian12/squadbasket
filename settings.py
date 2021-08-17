@@ -25,7 +25,7 @@ SECRET_KEY = 'b)(m_6c6pspr#b!#xooqv09gz*q&w@fk%x+pnjv$mj-wd62xcx'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'viulesport.alwaysdata.net']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 
 # Application definition

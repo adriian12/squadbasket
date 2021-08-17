@@ -549,8 +549,19 @@
     after: function(){},            //Callback: function(slider) - Fires after each slider animation completes
     end: function(){}               //Callback: function(slider) - Fires when the slider reaches the last slide (asynchronous)
   }
-  
-  //FlexSlider: Plugin Function
+
+
+
+
+
+
+
+
+
+
+
+
+
   $.fn.flexslider = function(options) {
     return this.each(function() {
       var $slides = $(this).find('.slides > li');

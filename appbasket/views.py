@@ -8,15 +8,17 @@ def home(request):
     slide = Slider.objects.all()
     columnas = Columna.objects.all()
     recientes = Noticia.objects.all()[:5]
-    miembros = Directiva.objects.all()
     return render(request, 'index.html', {
-        'columnas': columnas, 'slide': slide, 'recientes': recientes, 'miembros': miembros
+        'columnas': columnas, 'slide': slide, 'recientes': recientes
     })
 
 def club(request):
     club = Club.objects.all()
     org = Organizacion.objects.all()
-    return render(request, 'club.html', {'club': club, 'org': org})
+    miembros = Directiva.objects.all()
+    return render(request, 'club.html', {
+        'club': club, 'org': org, 'miembros': miembros
+    })
 
 def contacto(request):
     return render(request, 'contacto.html', {})
@@ -46,5 +48,8 @@ def noticia_completa(request):
     completa = Noticia.objects.all()[:1]
     return render(request, 'noticias/noticia.html', {'completa': completa})
 
+def politica(request):
+    return render(request, 'politica.html', {})
 
-
+def terminos(request):
+    return render(request, 'terminos.html', {})
