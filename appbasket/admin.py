@@ -70,7 +70,7 @@ class PrecioAdmin(admin.ModelAdmin):
 
     fieldsets = [
         (None, {'fields': ['categoria', 'total', 'url']}),
-        ('Jugadores:', {'fields': ['complemento_uno', 'complemento_dos', 'complemento_tres', 'complemento_cuatro', 'complemento_cinco']})
+        ('Servicios:', {'fields': ['complemento_uno', 'complemento_dos', 'complemento_tres', 'complemento_cuatro', 'complemento_cinco']})
     ]
     formfield_overrides = {
         models.TextField: {'widget': Textarea(attrs={'rows': 3, 'cols': 50})},

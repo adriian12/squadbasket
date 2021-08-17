@@ -2,12 +2,12 @@
         <p>Si tienes alguna duda, pregunta o sugerencia puedes escribirnos y nos pondremos en
             contacto contigo enseguida.</p>
 
-        <form name="sentMessage" id="contactForm" validate>
+        <form action="enviar.php" method="post" enctype="text/plain" name="sentMessage" id="contactForm" validate>
             <h3>Contacta</h3>
             <div class="control-group">
                 <div class="controls">
                     <input type="text" class="form-control"
-                           placeholder="Nombre" id="name" required
+                           placeholder="Nombre" id="name" name="nombre" required
                            data-validation-required-message="Porfavor introduce un nombre"/>
                     <p class="help-block"></p>
                 </div>
@@ -15,7 +15,7 @@
             <div class="control-group">
                 <div class="controls">
                     <input type="email" class="form-control" placeholder="Correo electrónico"
-                           id="email" required
+                           id="email" name="email" required
                            data-validation-required-message="Por favor introduce un email"/>
                 </div>
             </div>
@@ -23,14 +23,14 @@
             <div class="control-group">
                 <div class="controls">
 				 <textarea rows="10" cols="100" class="form-control"
-                           placeholder="Mensaje" id="message" required
+                           placeholder="Mensaje o duda que necesite" id="message" name="mensaje" required
                            data-validation-required-message="Por favor introduce un mensaje" minlength="10"
                            data-validation-minlength-message="Mínimo 10 carácteres"
                            maxlength="999" style="resize:none"></textarea>
                 </div>
             </div>
             <div id="success"></div>
-            <button type="submit" class="btn btn-primary pull-right">Send</button>
+            <button type="submit" class="btn btn-primary pull-right">Contactar</button>
             <br/>
         </form>
     </div>

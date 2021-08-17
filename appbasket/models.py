@@ -22,8 +22,8 @@ class Noticia(models.Model):
         return (u"%s" % self.titulo)
 
 class Slider(models.Model):
-    titulo = models.CharField(max_length=50)
-    texto = models.TextField(max_length=200)
+    titulo = models.CharField(max_length=50, null=True, blank=True)
+    texto = models.TextField(max_length=200, null=True, blank=True)
     imagen = models.ImageField(upload_to='slides')
 
     def __unicode__(self):
@@ -39,7 +39,7 @@ class Columna(models.Model):
 
 class Directiva(models.Model):
     nombre = models.CharField(max_length=30)
-    puesto = models.CharField(max_length=30)
+    puesto = models.CharField(max_length=30, null=True, blank=True)
     imagen = models.ImageField(upload_to='directiva')
     id = models.CharField(primary_key=True, max_length=25)
     tabla = models.TextField(null=True, blank=True)

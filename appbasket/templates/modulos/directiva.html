@@ -1,12 +1,13 @@
 <div class="team-six">
+    <h2 class="title-directive">DIRECTIVA</h2>
     <div class="row center">
         {% for directivos in miembros %}
-        <div class="col-md-3 col-sm-6">
+        <div class="team-complete">
             <!-- Directiva -->
             <div class="team-member">
                 <!-- Imagen -->
                 <a data-toggle="modal" data-target="#{{ directivos.id }}">
-                    <img class="img-responsive directiva-img" src="static/uploads{{ directivos.imagen.url }}" alt="directivo">
+                    <img class="img-responsive directiva-img" src="../static/uploads{{ directivos.imagen.url }}" alt="directivo">
                 </a>
                 <!-- Nombre -->
                 <h4>{{ directivos.nombre }}</h4>

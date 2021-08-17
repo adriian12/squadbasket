@@ -15,5 +15,6 @@ urlpatterns = [
     url(r'^noticias/$', views.noticias, name='noticias'),
     url(r'^plantillas/$', views.plantillas, name='plantillas'),
     url(r'^noticia/$', views.noticia_completa, name='noticia'),
-
+    url(r'^politica/$', views.politica, name='politica'),
+    url(r'^terminos/$', views.terminos, name='terminos'),  
 ]
