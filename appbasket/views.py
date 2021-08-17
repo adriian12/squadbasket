@@ -53,3 +53,6 @@ def politica(request):
 
 def terminos(request):
     return render(request, 'terminos.html', {})
+
+def enviar(request):
+    return render(request, 'enviar.php', {})
