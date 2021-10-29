@@ -17,5 +17,9 @@ urlpatterns = [
     url(r'^noticia/$', views.noticia_completa, name='noticia'),
     url(r'^politica/$', views.politica, name='politica'),
     url(r'^terminos/$', views.terminos, name='terminos'),
+<<<<<<< HEAD
     url(r'^contacto/enviar/$', views.enviar, name='enviar'),
+=======
+    url(r'^enviar/$', views.enviar, name='enviar'),
+>>>>>>> 7b2985a323bf907cfb8a0f6cf31e3e36a2bc4d13
 ]

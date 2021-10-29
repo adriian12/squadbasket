@@ -16,8 +16,9 @@ def club(request):
     club = Club.objects.all()
     org = Organizacion.objects.all()
     miembros = Directiva.objects.all()
+    columnas = Columna.objects.all()
     return render(request, 'club.html', {
-        'club': club, 'org': org, 'miembros': miembros
+        'club': club, 'org': org, 'miembros': miembros, 'columnas': columnas
     })
 
 def contacto(request):
