@@ -1,7 +1,7 @@
 {% load staticfiles %}
 <div class="container">
     <div class="row">
-        <div class="skill-home">
+        <!-- <div class="skill-home">
             <div class="skill-home-solid clearfix">
                 {% for info in columnas %}
                 <div class="col-md-3 col-sm-6 text-center">
@@ -14,33 +14,60 @@
                     </div>
                 </div>
                 {% endfor %}
-{% comment %}                <div class="col-md-3 col-sm-6 text-center">
-                    <span class="icons c2">
-                        <i class="fa fa-rocket"></i>
-                    </span>
-                    <div class="box-area">
-                        <h3>Ready To Move</h3>
-                        <p>Lorem ipsum dolor sitamet, consec tetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
+            </div>
+        </div> -->
+        <div class="desktop-wrapper pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="options">
+                        {% for info in columnas %}
+                        <div class="option">
+                            <div>
+                                <div class="info-wrapper">
+                                    <h2 class="title">{{ info.titulo }}</h2>
+                                    <div class="description">
+                                        <p>{{ info.texto|safe }}</p>
+                                        <!-- <a class="ext-link" href="https://www.playrsmartcoach.com/" target="_blank" title="PLAYR Website">Website</a> -->
+                                    </div>
+                                </div>
+                                <div class="icon-wrapper sb">
+                                    <div class="category-icon">
+                                        {{ info.icono|safe }}
+                                    </div>
+                                    <div class="category-text">
+                                        {{ info.titulo }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <span class="icons c3">
-                        <i class="fa fa-trophy"></i>
-                    </span>
-                    <div class="box-area">
-                    <h3>Commercial</h3>
-                        <p>Lorem ipsum dolor sitamet, consec tetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
+            </div>
+        </div>
+        <div class="mobile-wrapper pb-5">
+            <div class="container">
+                <div class="row">
+                    <div class="options">
+                        {% for info in columnas %}
+                        <div class="option">
+                            <div>
+                                <div class="info-wrapper">
+                                    <h2 class="title">{{ info.titulo }}</h2>
+                                    <div class="description">
+                                        <p>{{ info.texto|safe }}</p>
+                                    </div>
+                                </div>
+                                <div class="icon-wrapper sb">
+                                    <div class="category-icon">
+                                        {{ info.icono|safe }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
                     </div>
                 </div>
-                <div class="col-md-3 col-sm-6 text-center">
-                    <span class="icons c4">
-                        <i class="fa fa-star"></i>
-                    </span>
-                    <div class="box-area">
-                        <h3>Gated Projects</h3>
-                        <p>Lorem ipsum dolor sitamet, consec tetur adipisicing elit. Dolores quae porro consequatur aliquam, incidunt eius magni provident</p>
-                    </div>
-                </div>{% endcomment %}
             </div>
         </div>
     </div>
