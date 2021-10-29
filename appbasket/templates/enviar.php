@@ -1,22 +1,18 @@
 <?php
-$nombre = $_POST['nombre'];
-$mail = $_POST['email'];
-$empresa = $_POST['mensaje'];
+    if (isset($POST['enviar'])){
+        if (!empty($_POST['nombre']) && !empty($_POST['email']) && !empty($_POST['mensaje'])  )) {
+            $nombre = $_POST['nombre'];
+            $email = $_POST['email'];
+            $mensaje = $_POST['mensaje'];
+            $header = 'From: ' . $mail . " \r\n";
+            $header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
+            $header .= "Mime-Version: 1.0 \r\n";
+            $header .= "Content-Type: text/plain";
+            $mail = @mail(utf8_decode($mensaje), $header);
 
-$header = 'From: ' . $mail . " \r\n";
-$header .= "X-Mailer: PHP/" . phpversion() . " \r\n";
-$header .= "Mime-Version: 1.0 \r\n";
-$header .= "Content-Type: text/plain";
-
-$mensaje = "Este mensaje fue enviado por " . $nombre . ",\r\n";
-$mensaje .= "Su e-mail es: " . $mail . " \r\n";
-$mensaje .= "Mensaje: " . $_POST['mensaje'] . " \r\n";
-$mensaje .= "Enviado el " . date('d/m/Y', time());
-
-$para = 'viulesportbunyola@gmail.com';
-$asunto = 'Mensaje de la web';
-
-mail($para, $asunto, utf8_decode($mensaje), $header);
-
-header("Location:precio.html");
+            if ($mail) {
+            echo "<h4>Contactaremos lo antes posible</h4>";
+            }
+        }
+    }
 ?>
